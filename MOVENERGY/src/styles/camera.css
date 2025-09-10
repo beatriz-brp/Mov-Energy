@@ -1,0 +1,184 @@
+:root {
+  --cinza-escuro: #121212;
+  --branco: #f2f0ef;
+  --preto: #0d0d0d;
+  --roxo: #8a2be2;
+  --roxo-hover: #6938e0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--preto);
+  color: var(--branco);
+  margin: 0;
+  padding: 0;
+}
+
+/* HEADER */
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: var(--cinza-escuro);
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--branco);
+}
+
+.logo span {
+  color: var(--roxo);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  text-transform: uppercase;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+}
+
+.nav-links a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+.nav-links a:hover {
+  color: var(--roxo);
+}
+
+.btn.secondary {
+  border: 2px solid var(--roxo-hover);
+  color: var(--roxo-hover);
+  padding: 8px 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  transition: all 0.3s;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.btn.secondary:hover {
+  background: var(--roxo-hover);
+  color: var(--branco);
+}
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: var(--branco);
+  margin-bottom: 4px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+
+.hamburger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.hamburger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav.active .nav-links {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    background: var(--preto);
+    padding: 15px 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* --- Estilos para o container da câmera (html5-qrcode) --- */
+
+#reader {
+  width: 300px;
+  max-width: 90%;
+  margin: 0 auto;
+  border: 2px solid var(--roxo);
+  border-radius: 8px;
+  overflow: hidden;
+  background-color: var(--cinza-escuro);
+  padding: 15px;
+}
+
+#reader button {
+  background-color: var(--roxo);
+  color: var(--branco);
+  border: none;
+  padding: 10px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 10px;
+  display: inline-block;
+}
+
+#reader button:hover {
+  background-color: var(--roxo-hover);
+}
+
+#reader .html5-qrcode-message {
+  color: var(--roxo);
+  font-weight: 600;
+  font-size: 1rem;
+  margin-bottom: 8px;
+  text-align: center;
+}
+
+#reader .html5-qrcode-camera-icon {
+  filter: invert(70%) sepia(100%) saturate(500%) hue-rotate(260deg);
+  display: block;
+  margin: 0 auto 10px;
+  width: 48px;
+  height: 48px;
+}
+
+#reader .html5-qrcode-scanner {
+  background-color: var(--cinza-escuro);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+/* Opcional: centralizar textos e elementos do leitor para ficar bonito */
+
+main {
+  padding: 100px 20px 40px;
+  text-align: center;
+}

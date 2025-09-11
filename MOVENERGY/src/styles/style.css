@@ -22,23 +22,17 @@ body {
   color: var(--branco);
 }
 
-
-#sobre {
-  background: var(--preto);
-  padding: 80px 20px;
-  min-height: 100vh;
-  display: flex;
-  gap: 40px;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-}
+/* ===== SOBRE ===== */
 
 .sobre-section {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: row;
   align-items: center;
   justify-content: center;
+  gap: 20px;
+  padding: 80px 20px;
+  flex-wrap: wrap;
+  background: var(--preto);
 }
 
 .sobre-text {
@@ -46,38 +40,58 @@ body {
   padding: 60px;
   border-radius: 20px;
   margin: 20px;
-  max-width: 700px;
+  max-width: 600px;
   font-size: 18px;
   box-shadow: 0 0 20px 5px rgba(124, 77, 255, 0.363);
+  flex: 1;
+  min-width: 300px;
 }
 
 .sobre-text .title {
   color: var(--roxo);
   margin-bottom: 20px;
+  font-size: 25px;
 }
 
 .sobre-text p {
   color: var(--branco);
 }
 
-.sobre-text img {
-  max-width: 30px;
-  margin: 20px 10px;
-  transition: all 0.3s;
-
+/* Ajuste para ícones sociais no Sobre */
+.social-media-buttons {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
 }
 
-.sobre-text img:hover {
+.social-media-buttons img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.social-media-buttons img:hover {
   transform: scale(1.1);
 }
 
+.background-section {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .background-section video {
+  width: 100%;
   max-width: 500px;
   border-radius: 15px;
   margin: 20px;
 }
 
-/* HERO */
+/* ===== HERO ===== */
+
 #home {
   margin-top: 60px;
   height: 100vh;
@@ -96,7 +110,74 @@ body {
   margin-bottom: 20px;
 }
 
-/* MONITORAMENTO */
+.hero-text h1 span {
+  color: var(--roxo);
+}
+
+.hero-text p {
+  font-size: 18px;
+  margin-bottom: 30px;
+  color: var(--branco);
+}
+
+.buttons {
+  display: flex;
+  gap: 15px;
+}
+
+.btn {
+  padding: 14px 28px;
+  font-size: 16px;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: all 0.3s;
+  cursor: pointer;
+}
+
+.btn.primary {
+  background: var(--roxo);
+  color: var(--branco);
+  box-shadow: 0 4px 15px rgba(125, 77, 255, 0.4);
+}
+
+.btn.primary:hover {
+  background: var(--roxo-hover);
+  box-shadow: 0 6px 20px rgba(125, 77, 255, 0.6);
+}
+
+.btn.secondary {
+  border: 2px solid var(--roxo-hover);
+  color: var(--roxo-hover);
+  background: transparent;
+}
+
+.btn.secondary:hover {
+  background: var(--roxo-hover);
+  color: var(--branco);
+}
+
+.hero-image {
+  width: 650px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.hero-image img {
+  width: 100%;
+  border-radius: 12px;
+  filter: drop-shadow(0 0 25px rgba(125, 77, 255, 0.4));
+  transition: transform 0.4s, filter 0.4s;
+}
+
+.hero-image img:hover {
+  transform: scale(1.05);
+  filter: drop-shadow(0 0 35px rgba(125, 77, 255, 0.7));
+}
+
+/* ===== MONITORAMENTO ===== */
+
 .monitoramento-section {
   height: 100vh;
   display: flex;
@@ -125,79 +206,14 @@ body {
   color: var(--branco);
 }
 
+/* ===== ÁREAS ===== */
 
-.hero-text h1 span {
-  color: var(--roxo);
-}
-
-.hero-text p {
-  font-size: 18px;
-  margin-bottom: 30px;
-  color: var(--branco);
-}
-
-.buttons {
-  display: flex;
-  gap: 15px;
-}
-
-.btn {
-  padding: 14px 28px;
-  font-size: 16px;
-  text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
-  transition: all 0.3s;
-}
-
-.btn.primary {
-  background: var(--roxo);
-  color: var(--branco);
-  box-shadow: 0 4px 15px rgba(125, 77, 255, 0.4);
-}
-
-.btn.primary:hover {
-  background: var(--roxo-hover);
-  box-shadow: 0 6px 20px rgba(125, 77, 255, 0.6);
-}
-
-.btn.secondary {
-  border: 2px solid var(--roxo-hover);
-  color: var(--roxo-hover);
-  background: transparent;
-}
-
-.btn.secondary:hover {
-  background: var(--roxo-hover);
-  color: var(--branco);
-}
-
-.hero-image {
-  width: 550px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.hero-image img {
-  width: 100%;
-  border-radius: 12px;
-  filter: drop-shadow(0 0 25px rgba(125, 77, 255, 0.4));
-  transition: transform 0.4s, filter 0.4s;
-}
-
-.hero-image img:hover {
-  transform: scale(1.05);
-  filter: drop-shadow(0 0 35px rgba(125, 77, 255, 0.7));
-}
-
-/* AREAS */
 #container-areas {
   align-content: center;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 50px;
-  padding: 0px 80px;
+  padding: 30px 80px;
   background: var(--preto);
 }
 
@@ -233,9 +249,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* centraliza horizontalmente */
   justify-content: center;
-  /* centraliza verticalmente se precisar */
 }
 
 .area-content img {
@@ -243,7 +257,6 @@ body {
   margin-bottom: 30px;
   filter: brightness(0) invert(1);
 }
-
 
 .area-content button {
   background: var(--roxo);
@@ -261,7 +274,8 @@ body {
   transform: scale(1.05);
 }
 
-/* FOOTER */
+/* ===== FOOTER ===== */
+
 footer {
   text-align: center;
   padding: 40px 20px;
@@ -282,13 +296,15 @@ footer .social-footer a {
   color: var(--roxo);
   text-decoration: none;
   transition: color 0.3s;
+  cursor: pointer;
 }
 
 footer .social-footer a:hover {
   color: var(--roxo-hover);
 }
 
-/* RESPONSIVIDADE */
+/* ===== RESPONSIVIDADE ===== */
+
 @media (max-width: 1024px) {
   #home {
     flex-direction: column;
@@ -306,6 +322,20 @@ footer .social-footer a:hover {
   }
 }
 
+@media (max-width: 768px) {
+  .sobre-section {
+    flex-direction: column;
+  }
+
+  .sobre-text, .background-section {
+    max-width: 100%;
+  }
+
+  .background-section video {
+    width: 100%;
+    max-width: 100%;
+  }
+}
 
 @media (max-width: 400px) {
   .sobre-text {
@@ -329,8 +359,8 @@ footer .social-footer a:hover {
     flex-direction: column;
   }
   
-  .monitoramento-section{
-      margin-bottom: 500px;
+  .monitoramento-section {
+    margin-bottom: 400px;
   }
 
   #container-areas {
@@ -341,16 +371,5 @@ footer .social-footer a:hover {
   footer .social-footer {
     flex-direction: column;
     gap: 10px;
-  }
-    .sobre-section {
-    flex-direction: column;
-  }
-
-  .sobre-text {
-    order: 1;
-  }
-
-  .background-section {
-    order: 2;
   }
 }

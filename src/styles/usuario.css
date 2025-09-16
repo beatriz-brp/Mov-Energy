@@ -1,0 +1,265 @@
+/* src/styles/dashboard.css */
+
+/* Geral para o dashboard */
+#dashboard-main {
+    padding: 80px 100px;
+    background-color: var(--preto);
+}
+
+/* Título e seções */
+.dashboard-section,
+.history-section,
+.ranking-section,
+.plan-section {
+    margin-bottom: 60px;
+}
+
+.dashboard-section h2,
+.history-section h2,
+.ranking-section h2,
+.plan-section h2 {
+    color: var(--roxo);
+    font-size: 28px;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+/* Cards de desempenho */
+.dashboard-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+}
+
+.card {
+    background: #1d1d1d;
+    border-radius: 20px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 0 15px rgba(125, 77, 255, 0.2);
+    min-width: 250px;
+    flex: 1;
+}
+
+.card h3 {
+    font-size: 18px;
+    color: var(--branco);
+    margin-bottom: 10px;
+}
+
+.card .data-value {
+    font-size: 36px;
+    font-weight: 700;
+    color: var(--roxo);
+    margin-bottom: 5px;
+}
+
+.card small {
+    font-size: 12px;
+    color: #b0b0b0;
+}
+
+/* Botão de escanear QR Code */
+.dashboard-actions {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.action-card {
+    background: #1d1d1d;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 15px rgba(125, 77, 255, 0.2);
+    max-width: 600px;
+    width: 100%;
+}
+
+.action-card h3 {
+    color: var(--roxo);
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.action-card p {
+    color: var(--branco);
+    margin-bottom: 20px;
+}
+
+#scan-qr-btn {
+    width: 100%;
+}
+
+#qr-result {
+    margin-top: 20px;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+#gasto-calorico-input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 8px;
+    border: 2px solid var(--roxo);
+    background: #0d0d0d;
+    color: var(--branco);
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+#gasto-calorico-input::placeholder {
+    color: #a0a0a0;
+}
+
+/* Histórico de treinos */
+.history-table-container {
+    overflow-x: auto;
+}
+
+.history-table {
+    width: 100%;
+    border-collapse: collapse;
+    background: #1d1d1d;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(125, 77, 255, 0.2);
+}
+
+.history-table th, .history-table td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #2a2a2a;
+}
+
+.history-table th {
+    background: var(--roxo-hover);
+    color: var(--branco);
+    font-weight: 600;
+    font-size: 16px;
+}
+
+.history-table tr:hover {
+    background: #252525;
+}
+
+.history-table tr:last-child td {
+    border-bottom: none;
+}
+
+/* Ranking */
+.ranking-list-container {
+    display: flex;
+    justify-content: center;
+}
+
+.ranking-list {
+    background: #1d1d1d;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 15px rgba(125, 77, 255, 0.2);
+    width: 100%;
+    max-width: 600px;
+    list-style: none; /* Remove os pontos da lista */
+}
+
+.ranking-list li {
+    padding: 15px;
+    border-bottom: 1px solid #2a2a2a;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ranking-list li:last-child {
+    border-bottom: none;
+}
+
+.ranking-list li:first-child {
+    font-weight: bold;
+    color: var(--roxo);
+}
+
+.ranking-list span {
+    font-weight: 600;
+}
+
+.ranking-points {
+    color: var(--roxo);
+}
+
+/* Meu Plano */
+.plan-details {
+    background: #1d1d1d;
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 0 15px rgba(125, 77, 255, 0.2);
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.plan-details p {
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.plan-details strong {
+    color: var(--roxo);
+}
+
+.plan-details .btn {
+    margin-top: 20px;
+    width: 100%;
+}
+
+/* Responsividade */
+@media (max-width: 1024px) {
+    #dashboard-main {
+        padding: 60px 40px;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-cards {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .card {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #dashboard-main {
+        padding: 40px 20px;
+    }
+
+    .dashboard-section h2,
+    .history-section h2,
+    .ranking-section h2,
+    .plan-section h2 {
+        font-size: 24px;
+    }
+
+    .card .data-value {
+        font-size: 28px;
+    }
+    
+    .history-table th, .history-table td {
+        padding: 10px;
+        font-size: 14px;
+    }
+}
+
+/* Animação para entrada de elementos */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

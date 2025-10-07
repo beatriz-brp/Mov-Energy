@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
+@import url(header.css);
+@import url(home.css);
+@import url(footer.css);
+@import url(style.css);
+@import url(camera.css);
+
+:root {
+    --cinza-escuro: #121212;
+    --branco: #f2f0ef;
+    --preto: #0d0d0d;
+    --roxo: #8a2be2;
+    --roxo-hover: #6938e0;
+}
+
+* {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+.section-title {
+    color: #8ba6f6;
+    font-size: 1.563rem;
+}
+
+.section-subtitle {
+    font-size: 2.1875rem;
+}
+
+#content {
+    height: 100vh;
+    background-color: black;
+}
+
+.btn-default-full {
+    background-color: #8ba6f6;
+}
+

@@ -1,0 +1,50 @@
+:root {
+  --cinza-escuro: #121212;
+  --branco: #f2f0ef;
+  --preto: #0d0d0d;
+  --roxo: #8a2be2;
+  --roxo-hover: #6938e0;
+}
+
+footer {
+  border-top: 2px solid var(--roxo-hover);
+  background-color: var(--preto);
+  padding: 24px 8%;
+}
+
+#footer_items {
+  display: flex;
+  flex-direction: column; /* Agora os itens ficam um em cima do outro */
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 16px; /* Espaçamento vertical entre elementos */
+}
+
+#copyright {
+  color: var(--branco);
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+.social-media-buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.social-media-buttons a {
+  color: var(--branco);
+  font-size: 1.5rem;
+  transition: color 0.3s;
+}
+
+.social-media-buttons a:hover {
+  color: var(--roxo-hover);
+}
+
+/* Responsivo: opcional, já que o layout está em coluna */
+@media screen and (max-width: 600px) {
+  #footer_items {
+    gap: 20px;
+  }
+}

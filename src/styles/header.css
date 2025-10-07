@@ -1,0 +1,270 @@
+/* ================================
+   CSS VARIABLES (necessárias para o header)
+   ================================ */
+:root {
+  --cinza-escuro: #121212;
+  --branco: #f2f0ef;
+  --preto: #0d0d0d;
+  --roxo: #8a2be2;
+  --roxo-hover: #6938e0;
+  --roxo-light: rgba(138, 43, 226, 0.1);
+}
+
+/* ================================
+   HEADER PRINCIPAL
+   ================================ */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: rgba(18, 18, 18, 0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(138, 43, 226, 0.2);
+  animation: slideDown 0.6s ease-out;
+}
+
+/* ================================
+   USER DROPDOWN
+   ================================ */
+.user-dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+/* User button with animated underline like nav links */
+/* ================================
+   USER BUTTON (igual ao nav-links)
+   ================================ */
+.user-btn {
+  background: transparent;
+  border: none;
+  color: var(--branco);
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.9rem;
+  padding: 8px 12px;
+  display: flex;
+  align-items: center;
+  position: relative; /* necessário pro ::after */
+  transition: all 0.3s ease;
+}
+
+
+.user-btn::after {
+  content: '';
+  position: absolute;
+  bottom: 0; /* encosta na base do texto */
+  left: 5;
+  width: 0;
+  height: 2px;
+  background: var(--roxo);
+  transition: width 0.3s ease;
+}
+.user-btn:hover {
+  color: var(--roxo);
+  transform: translateY(-2px); /* igual aos links */
+}
+
+.user-btn:hover::after {
+  width: 100%;
+}
+
+
+/* Dropdown menu styles */
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 40px; /* Ajustado de 120% para 100% */
+  right: 0;
+  background: #1e1e1e;
+  border: 1px solid var(--roxo);
+  border-radius: 5px;
+  padding: 10px 0;
+  box-shadow: 0 0 10px rgba(138, 43, 226, 0.2);
+  z-index: 9999;
+  min-width: 150px;
+  transform: translateY(0); /* Remova qualquer transform que possa estar deslocando para baixo */
+}
+
+.dropdown-menu.active {
+  display: block;
+}
+
+.dropdown-menu li {
+  list-style: none;
+}
+
+.dropdown-menu li a {
+  display: block;
+  padding: 10px 20px;
+  color: var(--branco);
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.dropdown-menu li a:hover {
+  font-weight: 550;
+  background: var(--roxo-light);
+  color: var(--roxo);
+}
+
+/* ================================
+   ANIMATIONS
+   ================================ */
+@keyframes slideDown {
+  from { transform: translateY(-100%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+/* ================================
+   LOGO
+   ================================ */
+.logoMov {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--branco);
+  text-shadow: 0 0 20px rgba(138, 43, 226, 0.5);
+}
+
+.logoMov:hover{
+  cursor: pointer;
+}
+
+.logoMov span {
+  color: var(--roxo);
+  animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+ from { text-shadow: 0 0 5px rgba(138, 43, 226, 0.5); }
+  to   { text-shadow: 0 0 15px rgba(138, 43, 226, 1); }
+}
+
+/* ================================
+   NAVEGAÇÃO
+   ================================ */
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 25px;
+}
+
+.nav-links a {
+  color: var(--branco);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--roxo);
+  transition: width 0.3s ease;
+}
+
+.nav-links a:hover {
+  color: var(--roxo);
+  transform: translateY(-2px);
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+/* ================================
+   BOTÃO LOGIN
+   ================================ */
+.btn {
+  border: 2px solid var(--roxo);
+  color: var(--roxo);
+  padding: 12px 24px;
+  text-decoration: none;
+  border-radius: 25px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  position: relative;
+  overflow: hidden;
+  background: transparent;
+}
+
+.btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.btn:hover::before {
+  left: 100%;
+}
+
+.btn:hover {
+  background: var(--roxo);
+  color: var(--branco);
+  box-shadow: 0 5px 15px rgba(138, 43, 226, 0.4);
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+/* ================================
+   HAMBURGUER MENU (MOBILE)
+   ================================ */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.hamburger span {
+  height: 3px;
+  width: 25px;
+  background: var(--branco);
+  margin-bottom: 4px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
+}
+
+/* ================================
+   RESPONSIVE - MOBILE
+   ================================ */
+@media (max-width: 768px) {
+  .nav-links { 
+    display: none; 
+  }
+  
+  .hamburger { 
+    display: flex; 
+  }
+}
